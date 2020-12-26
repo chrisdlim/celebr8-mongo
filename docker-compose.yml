@@ -8,11 +8,8 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=celebr8!
     ports:
       - "27017:27017"
-  
-  celebr8-api:
-    container_name: 'celebr8-api'
-    build:
-      context: .
-      target: development
-    volumes:
-      
+    networks:
+      - celebr8
+
+networks:
+  celebr8:
